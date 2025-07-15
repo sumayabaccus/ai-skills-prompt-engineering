@@ -172,3 +172,224 @@ best_practices:
 effective_examples: "[Your insights about crafting effective examples]"
 choosing_examples: "[Tips for choosing representative examples]"
 when_to_use: "[When one-shot works better than zero-shot]"
+# Few-Shot Prompt Practice
+# API Documentation
+prompt: |
+  Write API endpoint documentation following these examples:
+  
+  Example 1:
+  POST /api/users
+  Purpose: Create a new user account
+  Parameters: email (string, required), password (string, required), name (string, optional)
+  Response: 201 Created with user object, 400 Bad Request if validation fails
+  
+  Example 2:
+  GET /api/orders/{id}
+  Purpose: Retrieve order details by ID
+  Parameters: id (integer, required, path parameter)
+  Response: 200 OK with order object, 404 Not Found if order doesn't exist
+  
+  Example 3:
+  DELETE /api/sessions/{token}
+  Purpose: Logout user and invalidate session
+  Parameters: token (string, required, path parameter)
+  Response: 204 No Content on success, 401 Unauthorized if token invalid
+  
+  Now write documentation for a WhatsApp webhook endpoint that receives message status updates.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Test Case Writing:
+prompt: |
+  Write test cases following these examples:
+  
+  Example 1:
+  Test ID: TC001
+  Feature: User Registration
+  Scenario: Valid email registration
+  Given: User is on registration page
+  When: User enters valid email "test@example.com" and password "SecurePass123!"
+  Then: Account is created and confirmation email is sent
+  
+  Example 2:
+  Test ID: TC002
+  Feature: Password Reset
+  Scenario: Reset with invalid email
+  Given: User is on password reset page
+  When: User enters non-existent email "fake@nowhere.com"
+  Then: Generic message "If email exists, reset link sent" is displayed
+  
+  Example 3:
+  Test ID: TC003
+  Feature: File Upload
+  Scenario: Upload oversized file
+  Given: User has file larger than 10MB
+  When: User attempts to upload the file
+  Then: Error message "File size exceeds 10MB limit" is shown
+  
+  Now write test cases for WhatsApp message delivery failure scenarios.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Product Requirements
+prompt: |
+  Write a product requirement section following these examples:
+  
+  Example 1:
+  REQ-001: User Authentication
+  Priority: High
+  Description: Users must authenticate using email and password
+  Acceptance Criteria:
+  - Login form validates email format
+  - Password must be 8+ characters with special character
+  - Failed login attempts locked after 5 tries
+  - Session expires after 2 hours of inactivity
+  Dependencies: None
+  
+  Example 2:
+  REQ-002: Order Tracking
+  Priority: Medium  
+  Description: Customers can track order status in real-time
+  Acceptance Criteria:
+  - Order status updates automatically
+  - Tracking page shows current location
+  - Email notifications sent on status changes
+  - Estimated delivery time displayed
+  Dependencies: REQ-001, Payment Gateway Integration
+  
+  Example 3:
+  REQ-003: Mobile Responsiveness
+  Priority: Medium
+  Description: Application adapts to mobile screen sizes
+  Acceptance Criteria:
+  - Works on devices 320px width and above
+  - Touch-friendly button sizes (44px minimum)
+  - Readable text without horizontal scrolling
+  - Fast loading on 3G connections
+  Dependencies: REQ-001, REQ-002
+  
+  Now write a requirement for WhatsApp message template management functionality.
+ai_response: "[Test this prompt and paste the response here]"
+📘 API Documentation
+Prompt:
+Write API endpoint documentation for a WhatsApp webhook endpoint that receives message status updates.
+
+AI Response:
+
+POST /api/webhooks/whatsapp/status
+
+Purpose:  
+Receive real-time status updates for WhatsApp messages sent via the Business API.
+
+Parameters:  
+- message_id (string, required): Unique identifier of the WhatsApp message  
+- status (string, required): Current status of the message (e.g., sent, delivered, read, failed)  
+- recipient_id (string, required): WhatsApp ID of the message recipient  
+- timestamp (string, required): ISO 8601 formatted timestamp of the status update  
+- error_code (integer, optional): Error code if the message failed  
+- error_description (string, optional): Description of the error if applicable
+
+Response:  
+- 200 OK if the status update is successfully processed  
+- 400 Bad Request if required parameters are missing or malformed  
+- 403 Forbidden if the request is unauthorized  
+✅ Test Case Writing
+Prompt:
+Write test cases for WhatsApp message delivery failure scenarios.
+
+AI Response:
+
+Test ID: TC201  
+Feature: WhatsApp Message Delivery  
+Scenario: Delivery fails due to invalid recipient number  
+Given: A message is sent to an invalid WhatsApp number  
+When: The system attempts to deliver the message  
+Then: The message status is marked as "failed" and an error code is logged
+
+Test ID: TC202  
+Feature: WhatsApp Message Delivery  
+Scenario: Delivery fails due to expired access token  
+Given: The system's WhatsApp API token has expired  
+When: A message is sent  
+Then: The API returns a 401 error and the message is not delivered
+
+Test ID: TC203  
+Feature: WhatsApp Message Delivery  
+Scenario: Delivery fails due to network timeout  
+Given: The WhatsApp API is temporarily unreachable  
+When: A message is sent  
+Then: The system retries the request and logs a timeout error if all retries fail
+📄 Product Requirements
+Prompt:
+Write a requirement for WhatsApp message template management functionality.
+
+AI Response:
+
+REQ-004: WhatsApp Message Template Management  
+Priority: High  
+Description: Admin users must be able to manage WhatsApp message templates used for outbound communication.
+
+Acceptance Criteria:  
+- Admins can create, edit, and delete message templates  
+- Templates support placeholders (e.g., {{customer_name}}, {{order_id}})  
+- Templates must be submitted for WhatsApp approval before use  
+- Only approved templates are available for selection in outbound workflows  
+- Templates are categorized by use case (e.g., order updates, reminders, promotions)
+
+Dependencies: WhatsApp Business API, Admin Portal Authentication
+# Few-Shot Pattern Analysis
+# Pattern_observations:
+formatting_consistency: "[How well did AI follow complex formatting patterns?]"
+pattern_types: "[Which types of patterns worked best with multiple examples?]"
+quantity_vs_quality: "[Did more examples always improve quality?]"
+
+# Best Practices
+example_selection: "[Your insights about example selection and ordering]"
+consistency_vs_variation: "[How to balance consistency with variation]"
+advantages_over_one_shot: "[When few-shot provides significant advantages over one-shot]"
+
+# Professional Ppplications
+technical_documentation: "[Where few-shot prompting excels in technical documentation]"
+specialized_formats: "[How multiple examples help with specialized formats]"
+Pattern Observations
+formatting_consistency:
+The AI followed formatting patterns very well when examples were clearly structured and labeled. Consistent use of headers (e.g., "Test ID", "Feature", "Scenario") and bullet points helped the model replicate the format accurately across different domains like test cases, API docs, and product requirements.
+
+pattern_types:
+Patterns that included both structure and content guidance (e.g., user stories, test cases, API docs) worked best. These examples provided a clear scaffold for the AI to follow, especially when the format was repeated across multiple examples.
+
+quantity_vs_quality:
+More examples generally improved quality when they were diverse but still aligned in structure. Three examples seemed to be a sweet spot—enough to establish a pattern without overwhelming or diluting the prompt.
+
+✅ Best Practices
+example_selection:
+Choose examples that are:
+
+Representative of the range of expected inputs
+Varied in content but consistent in structure
+Clear in intent and free of ambiguity
+Ordering matters too—starting with the most typical or foundational example helps set expectations.
+
+consistency_vs_variation:
+Maintain structural consistency (e.g., headers, bullet points) while varying content (e.g., different features or scenarios). This helps the model generalize the format without overfitting to specific content.
+
+advantages_over_one-shot:
+Few-shot prompting is especially advantageous when:
+
+The format is complex or domain-specific
+The task requires both structure and nuance (e.g., bug reports, product specs)
+You want to guide tone, style, and level of detail
+💼 Professional Applications
+technical_documentation:
+Few-shot prompting excels in generating:
+
+API documentation
+Integration guides
+Configuration instructions
+It ensures consistency across endpoints or modules while adapting to specific parameters.
+specialized_formats:
+Multiple examples are particularly helpful for:
+
+Compliance checklists
+QA test cases
+User stories and acceptance criteria
+They help the model internalize domain-specific language and formatting expectations.
+
