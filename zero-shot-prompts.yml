@@ -1098,6 +1098,89 @@ ai_response: "[Test and record response]"
 # Crisis Response Planning
 prompt: "The WhatsApp Business API will be down for maintenance during your peak business hours. Develop a contingency plan step by step..."
 ai_response: "[Test and record response]"
+🧩 Multi-Stakeholder Decision
+Prompt: Three departments (Engineering, Marketing, Customer Success) have conflicting requirements for the WhatsApp integration timeline. Think through a resolution strategy that considers all perspectives...
+
+AI Response:
+
+Understand Each Department’s Priorities:
+
+Engineering wants more time to ensure a stable, secure integration.
+Marketing is pushing for a fast launch to align with a campaign.
+Customer Success needs reliability to avoid support issues and protect customer trust.
+Identify Overlaps and Conflicts:
+
+Marketing’s urgency may compromise Engineering’s quality goals.
+Customer Success aligns more with Engineering on stability but also wants visibility into timelines.
+Facilitate a Joint Planning Session:
+
+Bring all stakeholders together to share constraints and expectations.
+Use a shared roadmap to visualize dependencies and trade-offs.
+Propose a Phased Rollout:
+
+Phase 1: MVP with core messaging features (aligns with Marketing’s timeline).
+Phase 2: Stability and analytics enhancements (satisfies Engineering and Customer Success).
+Set Clear Milestones and Feedback Loops:
+
+Weekly check-ins to assess readiness and adjust scope.
+Define success metrics for each phase (e.g., uptime, engagement, support tickets).
+Recommendation:
+
+Adopt a phased approach with a soft launch to balance speed and quality.
+Ensure all departments have input into go/no-go decisions.
+⚖️ Risk-Benefit Analysis
+Prompt: Evaluate whether to build WhatsApp integration in-house vs using a third-party service. Consider all factors systematically...
+
+AI Response:
+
+In-House Development:
+
+Pros: Full control, tailored to internal systems, long-term cost savings.
+Cons: High upfront cost, longer time to market, requires deep API expertise.
+Third-Party Service:
+
+Pros: Faster deployment, built-in compliance, support, and scalability.
+Cons: Ongoing subscription costs, limited customization, vendor lock-in risk.
+Key Factors to Consider:
+
+Timeline: If speed is critical, third-party wins.
+Budget: In-house is costlier upfront but cheaper long-term.
+Security/Compliance: In-house offers more control; third-party must be vetted.
+Team Expertise: If internal team lacks WhatsApp API experience, third-party reduces risk.
+Recommendation:
+
+Use a third-party service for initial rollout to validate value and reduce time-to-market.
+Reassess after 6–12 months for potential in-house migration if volume and customization needs grow.
+🚨 Crisis Response Planning
+Prompt: The WhatsApp Business API will be down for maintenance during your peak business hours. Develop a contingency plan step by step...
+
+AI Response:
+
+Assess Impact:
+
+Identify affected workflows (e.g., order confirmations, support messages).
+Estimate message volume and customer segments impacted.
+Notify Stakeholders:
+
+Inform internal teams (Support, Marketing, Engineering).
+Prepare external communication for customers (email, SMS, website banner).
+Activate Backup Channels:
+
+Route urgent communications through SMS or email.
+Update chatbot or IVR to inform users of temporary unavailability.
+Queue and Retry Strategy:
+
+Queue messages during downtime and retry once service resumes.
+Monitor for delivery failures and alert support teams.
+Customer Support Readiness:
+
+Prepare scripts for agents to explain the issue.
+Extend support hours if needed to handle post-downtime backlog.
+Post-Maintenance Review:
+
+Analyze message delivery success.
+Send follow-up messages to affected users.
+Document lessons learned and update incident response playbook.
 
 
 
