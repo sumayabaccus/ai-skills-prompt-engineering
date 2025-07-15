@@ -1,0 +1,37 @@
+# Zero-Shot Prompt Practice
+# Email Writing
+prompt: "Write a professional email to stakeholders explaining a 2-week delay in the WhatsApp integration project. Include an apology, brief explanation of technical challenges, revised timeline, and next steps. Keep the tone professional but reassuring."
+ai_response: "[Subject: WhatsApp Integration Project – Revised Timeline and Next Steps
+
+Dear Stakeholders,
+
+I hope this message finds you well.
+
+I’m writing to inform you that the WhatsApp integration project will be delayed by approximately two weeks. I sincerely apologize for this shift and any inconvenience it may cause.
+
+The delay is due to a combination of technical challenges, including unexpected complexities in message routing and API authentication. Our development team is actively addressing these issues to ensure a secure and seamless integration that meets our quality and compliance standards.
+
+We now anticipate completing the integration by [insert revised date], with testing and deployment to follow shortly thereafter.
+
+Next Steps:
+
+Finalize API configuration and security validation by [insert date]
+Conduct end-to-end testing and QA by [insert date]
+Prepare training and deployment materials for customer service teams
+We remain committed to delivering a robust solution and will keep you updated on progress. Please feel free to reach out if you have any questions or would like to discuss the revised timeline in more detail.
+
+Thank you for your continued support and understanding.
+
+Warm regards,
+Sumaya Baccus
+Business Analyst]"
+
+
+# Meeting Summary
+prompt: "Create a concise meeting summary with the following structure: Key Decisions, Action Items (with owners and deadlines), and Next Meeting Date. Write it for a project status meeting about implementing WhatsApp customer service capabilities."
+ai_response: "[Test this prompt and paste the response here]"
+
+# Technical Documentation:
+prompt: "Write a brief technical requirements document for integrating WhatsApp Business API into an existing customer service system. Include sections for: Overview, Technical Requirements, Integration Points, and Success Criteria. Use bullet points and keep it under 300 words."
+ai_response: "[Test this prompt and paste the response here]"
+
